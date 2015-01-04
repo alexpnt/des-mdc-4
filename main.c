@@ -1,12 +1,10 @@
-/*Author: Rui Pedro Paiva
-Teoria da Informação, LEI, 2008/2009*/
 #include <stdio.h>
 #include <string.h>
 
 int unDES (char* inFileName, unsigned long long key);
 int DES (char* inFileName, unsigned long long key);
 
-//função principal, a qual gere todo o processo de encriptação e decriptação
+//função principal, a qual gere todo o processo de encriptação e desencriptacao
 int main(int argc, char *argv[])
 {
 	int erro;
@@ -19,7 +17,7 @@ int main(int argc, char *argv[])
 		printf("Usage: des [OPTION] [FILE]\n%s\n%s\n%s\n",description,examples,options);
 		return 0;
 	}
-	//encriptação
+	//encrypt
 	key = 0x0123456789ABCDEF;
 
 	if(strcmp("-e",argv[1])==0){
@@ -28,7 +26,7 @@ int main(int argc, char *argv[])
 			return erro;
 	}
 		
-	//decriptação
+	//decrypt
 	if(strcmp("-d",argv[1])==0){
 		erro = unDES(argv[2], key);
 	}

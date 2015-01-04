@@ -6,7 +6,7 @@ OBJS   = DES.o main.o
 all:	${PROG}
 
 clean:
-	rm ${OBJS} ${PROG}
+	rm ${OBJS}
   
 ${PROG}:	${OBJS}
 	${CC} ${FLAGS} ${OBJS} -o $@
